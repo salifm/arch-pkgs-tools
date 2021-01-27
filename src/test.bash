@@ -7,4 +7,4 @@ function ap_main {
 	docker run -it --rm -v "$AP_PWD"/_pkg:/_pkg arch-pkgs:latest /usr/bin/bash
 }
 
-main $@
+ap_main $@

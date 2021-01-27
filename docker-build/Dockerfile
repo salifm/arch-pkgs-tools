@@ -10,5 +10,5 @@ RUN useradd -d /home/makepkg makepkg && \
     echo 'makepkg ALL=(ALL) NOPASSWD: ALL' >> /etc/sudoers && \
     chown -R makepkg:users /home/makepkg
 
-COPY build /usr/local/bin/
+COPY ap-build /usr/local/bin/
 COPY ap-tools.conf /etc/

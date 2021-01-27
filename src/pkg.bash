@@ -15,7 +15,7 @@ function ap_main {
 		$([ -z "$AP_DEBUG" ] && echo -n "--rm" || echo -n "") \
 		-v "$AP_PWD"/_pkg/tmp:/_pkg \
 		-v "$AP_PWD"/"$_name":/_build \
-		arch-pkgs:latest ap-build
+		arch-pkgs:latest /usr/local/bin/ap-build
 	cp --no-preserve=mode,ownership ./_pkg/tmp/*"$AP_PKGEXT" ./_pkg/
 	gpg --detach-sign --use-agent -u "$AP_GPG_KEY" --no-armor ./_pkg/*"$AP_PKGEXT"
 	gio trash ./_pkg/tmp
