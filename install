@@ -9,7 +9,7 @@ function main {
 	install -Dm755 ./src/debug.bash "$pkgdest"/usr/bin/ap-debug
 	install -Dm755 ./src/get-aur.bash "$pkgdest"/usr/bin/ap-get-aur
 	install -Dm755 ./src/test.bash "$pkgdest"/usr/bin/ap-test
-	install -Dm644 ./res/ap-tools.conf "$pkgdest"/etc/"$pkgname"/ap-tools.conf
+	install -Dm644 ./src/ap-tools.conf "$pkgdest"/etc/ap-tools.conf
 	install -Dm644 ./docker-build/Dockerfile "$pkgdest"/usr/share/ap-tools/Dockerfile
 	install -Dm644 ./docker-build/build.bash "$pkgdest"/usr/share/ap-tools/build
 	install -Dm644 ./LICENSE "$pkgdest"/usr/share/licenses/"$pkgname"/LICENSE
