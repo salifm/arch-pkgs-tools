@@ -2,7 +2,7 @@ FROM archlinux:latest
 
 VOLUME /_pkg /_build
 
-RUN pacman -Syu --noconfirm --needed base base-devel git tree go
+RUN pacman -Syu --noconfirm --needed base base-devel git
 RUN useradd -d /home/makepkg makepkg && \
     mkdir -p /home/makepkg/{.config/pacman,.gnupg,build/{srcdest,srcpkgdest,logdest,build,out}} && \
     echo 'keyserver-options auto-key-retrieve' > /home/makepkg/.gnupg/gpg.conf && \

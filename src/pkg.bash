@@ -16,9 +16,9 @@ function ap_main {
 		-v "$AP_PWD"/_pkg/tmp:/_pkg \
 		-v "$AP_PWD"/"$_name":/_build \
 		arch-pkgs:latest /usr/local/bin/ap-build
+	[ ! -z "$AP_GPG_KEY" ] && gpg --detach-sign --use-agent -u "$AP_GPG_KEY" --no-armor ./_pkg/tmp/*"$AP_PKGEXT"
 	cp --no-preserve=mode,ownership ./_pkg/tmp/*"$AP_PKGEXT" ./_pkg/
 	rm -rf ./_pkg/tmp
-	[ ! -z "$AP_GPG_KEY" ] && gpg --detach-sign --use-agent -u "$AP_GPG_KEY" --no-armor ./_pkg/*"$AP_PKGEXT"
 }
 
 ap_main $@
